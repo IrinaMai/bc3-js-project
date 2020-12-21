@@ -21,9 +21,9 @@
           <div class="mobile-menu-closed">
             <button class="close-menu"></button>
             <div class="header-auth-mobile">
-              <button class="sign-in__btn" data-btn="signin">Вход</button>
+              <button id="signInDrop" class="sign-in__btn" data-btn="signin">Вход</button>
               <span class="sign-in-up__stick"></span>
-              <button class="sign-up__btn" data-btn="signup">
+              <button id="signUpDrop" class="sign-up__btn" data-btn="signup">
                 Регистрация
               </button>
             </div>
@@ -52,9 +52,9 @@
           />
           <button class="header__input--btn"></button>
           <div class="header-auth">
-            <button class="sign-in__btn" data-btn="signin">Вход</button>
+            <button id="signInHeader" class="sign-in__btn" data-btn="signin">Вход</button>
             <span class="sign-in-up__stick"></span>
-            <button class="sign-up__btn" data-btn="signup">Регистрация</button>
+            <button id="signUpHeader" class="sign-up__btn" data-btn="signup">Регистрация</button>
           </div>
           <button class="header__create-ad-btn modal-btn">
             Создать объявление
@@ -228,6 +228,8 @@
       </div>
       <div class="modal-wrapper">
       <div class="modal"></div>
+      <div class="auth__wrap"></div>
+      <div class="logOut__wrap"></div>
     </div>
   </main>
    <footer class="footer">

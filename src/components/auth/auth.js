@@ -2,14 +2,51 @@ import axios from 'axios';
 import validator from 'validator';
 import './auth.css';
 import signUp from './template/signUp.hbs';
-import logOut  from './template/logOut.hbs';
+import logOut from './template/logOut.hbs';
+import {modalBackDrop} from '../modal/modalBackDrop'
 
+// console.log(modalBackDrop());
+
+const signUpHeader = document.querySelector('#signUpHeader');
+const signInHeader = document.querySelector('#signInHeader')
+const signInDrop = document.querySelector('#signInDrop')
+const signUpDrop = document.querySelector('#signUpDrop')
 const authWrapRef = document.querySelector('.auth__wrap');
-// const logOutWrapRef = document.querySelector('.logOut__wrap');
+const logOutWrapRef = document.querySelector('.logOut__wrap');
+// console.log(headerSignIn);
+// console.log(headerSignUp);
+
+// const onHeaderSignUp = () => {
+//   console.log(modalBackDrop());
+// };
+
+
+
+
+const onHeaderSignIn = () => {
+//     // modalBackDrop(signIn);
+//     console.log(modalBackDrop(signIn()));
+ 
+};
+// const attempt = authWrapRef.innerHTML = signUp();
+
+const onHeaderSignUp = (attempt) => {
+       
+    modalBackDrop(signUp());
+};
+
+signInHeader.addEventListener('click', onHeaderSignIn);
+signInDrop.addEventListener('click', onHeaderSignIn);
+signUpHeader.addEventListener('click', onHeaderSignUp);
+signUpDrop.addEventListener('click', onHeaderSignUp)
 
 // =========SIGN UP========================================
 
-authWrapRef.innerHTML = signUp();
+// const onHeaderSignUp = () => {
+//   modalBackDrop(signUp())
+// };
+
+// const attempt = authWrapRef.innerHTML = signUp();
 
 
 const refs = {
@@ -19,6 +56,7 @@ const refs = {
     authFormBtnLogIn: authForm.querySelector('.authForm__btn_logIn'),
     authFormInput:authForm.querySelectorAll('.authForm__input'),
 };
+
 
 const url = 'https://callboard-backend.herokuapp.com';
 
@@ -62,6 +100,11 @@ const onSignUpBtn = async () => {
     };
 };
 
+// const onHeaderSignUp = () => {
+//   console.log(modalBackDrop);
+// };
+// onHeaderSignUp();
+
 const onLogInBtn = async () => {
     const result = await axios.post(`${url}/auth/login`, { ...user });
     logInUser = {...result.data.user}
@@ -86,7 +129,7 @@ refs.clsBtn.addEventListener('click', clsModal )
 
 // ==================SIGN OUT========================
 
-const logOutWrapRef = document.querySelector('.logOut__wrap');
+// const logOutWrapRef = document.querySelector('.logOut__wrap');
 
 logOutWrapRef.innerHTML = logOut();
 
@@ -113,5 +156,16 @@ refsOut.authFormBtnLogOut.addEventListener('click', onLogoutBtn);
 refsOut.authFormBtnExit.addEventListener('click', clsModalOut);
 refsOut.authFormBtnCls.addEventListener('click', clsModalOut);
 
+// const onHeaderSignUp = (e) => {
+//     // console.log(modalBackDrop());
+//     console.log(e.target);
+// };
+
+// const onHeaderSignIn = (e) => {
+//     // console.log(modalBackDrop());
+//     console.log(e.target);
+// };
 
 
+// headerSignIn.addEventListener('click', onHeaderSignIn);
+// headerSignUp.addEventListener('click', onHeaderSignUp)

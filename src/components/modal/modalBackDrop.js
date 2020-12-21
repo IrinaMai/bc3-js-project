@@ -24,3 +24,4 @@ export const modalBackDrop = templation => {
     document.addEventListener('keydown', escBtnPress);
     return closeModal;
 };
+
